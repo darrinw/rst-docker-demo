@@ -1,0 +1,9 @@
+*.iml
+/dist/
+/docs/dist/
+/build/
+/venv/
+/jenkins/home/
+/jenkins/ref/
+
+.idea/

@@ -1,0 +1,54 @@
+
+version: "2"
+
+services:
+
+  # Our main service, used during development.
+  # Will present the built site with automatic change detection and browser reload.
+  docs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./:/doc
+    command: [
+      "sphinx-autobuild",
+      "--poll",
+      "--host", "0.0.0.0",
+      "--port", "8000",
+      "-b", "html",
+      "/doc/docs/", "/doc/dist/"
+    ]
+
+  # A static container based on nginx.
+  # This is the container that we want to publish.
+#  static:
+#    build:
+#      context: .
+#      dockerfile: Dockerfile-static
+#    ports:
+#      - "80:80"
+#    volumes:
+#      - ./dist:/usr/share/nginx/html
+
+#  wiki:
+#    image: laurencer/confluence-sync-sandbox:latest
+#    ports:
+#      - "8090:8090" # HTTP
+
+  # An experimental Jenkins container
+#  jenkins:
+#    build:
+#      context: .
+#      dockerfile: Dockerfile-Jenkins
+##    image: "jenkins:alpine"
+##    image: "jenkinsci/jenkins:2.9"
+#    ports:
+#      - "8080:8080" # HTTP
+#      - "50000:50000" # Jenkins node connection port
+#    volumes:
+#      - ./jenkins/home:/var/jenkins_home
+#      - ~/.docker:/var/jenkins_home/.docker
+#      - /var/run/docker.sock:/var/run/docker.sock

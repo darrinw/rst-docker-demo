@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ title|striptags|e }} - AbbVie Wordpress Automation</title>
+  <meta name="viewport" content="width=device-width" />
+  <meta charset="utf-8" />
+  <link rel="stylesheet" type="text/css"
+        href="https://eafdbc63c97ce6bec9ef-b0a668e5876bef6fe25684caf71db405.ssl.cf1.rackcdn.com/v1-latest/canon.min.css">
+  <script type="application/javascript"
+          src="https://code.jquery.com/jquery-1.10.0.min.js"></script>
+  <script type="application/javascript"
+          src="https://eafdbc63c97ce6bec9ef-b0a668e5876bef6fe25684caf71db405.ssl.cf1.rackcdn.com/v1-latest/canon.min.js"></script>
+  <script type="application/javascript"
+          src="https://cdn.rawgit.com/knsv/mermaid/0.5.8/dist/mermaid.min.js"></script>
+  <link rel="stylesheet" href="{{ pathto('_static/rackspace.css', 1) }}" type="text/css" />
+</head>
+
+<body class="rs-fixed">
+  <div class="rs-wrapper">
+    <div class="rs-nav-utility">
+      <div class="rs-container">
+        <ul class="rs-nav">
+          <li class="rs-nav-item "><a class="rs-nav-link" href="#">Rackspace DevOps Professional Services</a></li>
+          <li class="rs-nav-item "><a class="rs-nav-link" href="#">Jenkins</a></li>
+        </ul>
+      </div>
+    </div>
+      <div class="rs-nav-primary">
+        <div class="rs-container">
+          <div class="rs-nav-brand">
+            <a href="index.html"></a>
+          </div>
+          <ul class="rs-nav">
+            <li class="rs-nav-item active"><a href="{{ pathto('index') }}">Home</a></li>
+            <li class="rs-nav-item"><a href="{{ pathto('package_specification/index') }}">Package Spec.</a></li>
+            <li class="rs-nav-item"><a href="{{ pathto('reference_implementation/index') }}">Reference Implementation</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="rs-body">
+        <div class="rs-container">
+          <div class="rs-main">
+            <div class="rs-sidebar">
+              <div class="rs-inner">
+                {% block menu %}
+                {% set toctree = toctree(maxdepth=3, collapse=true, includehidden=True) %}
+                {{ toctree }}
+                {% endblock %}
+              </div>
+            </div>
+            <div class="rs-content rs-panel">
+              <div class="rs-inner">
+                {% block body %}{% endblock %}
+                {% if next or prev %}
+                <hr />
+                {% if prev %}
+                <a href="{{ prev.link|e }}" class="rs-btn"
+                   style="float: left; margin-bottom: 20px;" title="{{ prev.title|striptags|e }}">Previous</a>
+                {% endif %}
+                {% if next %}
+                <a href="{{ next.link|e }}" class="rs-btn rs-btn-primary"
+                   style="float: right; margin-bottom: 20px;" title="{{ next.title|striptags|e }}">Next</a>
+                {% endif %}
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rs-push"></div>
+    </div>
+    <div class="rs-nav-footer">
+      <div class="rs-container">
+        <ul class="rs-nav">
+          <li class="rs-nav-item">&copy; Rackspace </li>
+          <<!--li class="rs-nav-item"><a class="rs-nav-link"
+                                     href="https://www.rackspace.com/information/legal/websiteterms"
+                                     target="_blank">Website Terms</a></li>-->
+        </ul>
+      </div>
+    </div>
+  <script>mermaid.initialize({startOnLoad:true});</script>
+  </body>
+  </html>
