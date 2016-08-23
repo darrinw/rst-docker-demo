@@ -10,6 +10,9 @@
 
     Page ###Page### of ###Total###
 
+.. image:: ../images/rs-logo-1.png
+   :align: right
+
 Solution Design
 ===============
 
@@ -18,16 +21,19 @@ Overview
 
 This project has the following high-level goals:
 
-#. Build a cloud envinronment from code - IaaC
-#. Build a framework for using Automation
-#. Use the framework with two server roles ('Web' and 'Application')
+#. Build repeatable cloud envinronments from code - IaaC
+#. Configure Web and Application servers via Automation
+#. Application Delivery is Consistent and Automated
+#. Scale the application during high load
 
 Key Deliverables
 ~~~~~~~~~~~~~~~~
 
 In order to acheive these goals, Rackspace will:
 
-1. Create a template for a complete application Environment
+1. Create templates for a complete application Environments
+#. Setup Configuration Management using CHEF Automation
+#. Setup Jenkins CI/CD server to test and deliver application code
 #. Provide 'Best Practices' guide for writing automation
 #. Ensure all code and scripts are stored in a SCM system
 #. Provide a 'Troubleshooting' guide and full project documentation
@@ -36,30 +42,46 @@ Key Components
 ~~~~~~~~~~~~~~
 
 1. Rackspace Public Cloud
+#. Rackspace DBaaS - MySQL
 #. CHEF Automation
-#. Continuious Integration Server
+#. CentOS 7
+#. Jenkins CI Server
 #. GitHub
 
+Why DevOps?
+-----------
 
-Who's Who
----------
+*Q. What is the value to my business when using DevOps?*
 
-These are the parties that interact with the system.
+**A. There are many benefits, such as:**
+  * consistancy
+  * agility
+  * scale 
+  * security
+  * quality
 
-* **XYZ's Technical Team** XYZ will be responsible for the system after handover.
-* **Rackspace Professional Services** ("Rackspace PS"): Rackspace PS has designed and implemented
-  the System described by this document.
-* **Rackspace Support**: Rackspace Support refers to Rackspace services provided under the
-  Intensive Support level and by the Network Security team ("NetSec").
+|
 
+.. image:: ../images/DevOps_logo.png
+   :width: 60%
+   :align: center
 
-How it works
-------------
+DevOps Workflow
+---------------
 
-The diagram below shows the basic components of the Automation setup.
+The diagram below shows some of the components in a that can be delivered in a Rackspace Professional Services DevOps solution.
+
+.. image:: ../images/devops-workflow.png
+   :width: 100%
+
+Cloud Infrastructure
+--------------------
+
+The diagram below shows the basic components of the Cloud Infrastructure.
 
 .. image:: ../images/rackspace-cloud-2.png
    :width: 100%
+
 
 Server Consistency
 ~~~~~~~~~~~~~~~~~~

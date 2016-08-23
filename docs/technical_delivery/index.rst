@@ -2,13 +2,16 @@
 
 .. header::
 
-    XYZ Configuration Management Solution Design
+    XYZ Technical Delivery
 
     Version 1.0
 
 .. footer::
 
     Page ###Page### of ###Total###
+
+.. image:: ../images/rs-logo-1.png
+   :align: right
 
 Technical Delivery
 ==================
@@ -19,31 +22,20 @@ Overview
 The key components of the solution include:
 
   1. Rackspace Cloud Servers
+  #. Rackspace DBaaS MySQL
   #. CHEF Automation
+  #. CentOS 7
   #. Continuous Intgration Server
   #. GitHub
 
 
 
-Who's Who
-~~~~~~~~~
-
-These are the parties that interact with the system.
-
-
-* **Rackspace Professional Services** ("Rackspace PS"): Rackspace PS has designed and implemented
-  the System described by this document.
-
-* **Rackspace Support**: Rackspace Support refers to Rackspace services provided under the
-  Intensive Support level and by the Network Security team ("NetSec").
-
-
-Workflow Diagram
+DevOps Workflow
 ----------------
 
 The diagram below is a high level out-line for the process flow of the Automation.
 
-.. image:: https://www.lucidchart.com/publicSegments/view/ea74a757-b8fb-46ec-ba75-68bf1a0429fa/image.png
+.. image:: ../images/devops-workflow.png
    :width: 100%
 
 Automation Setup
@@ -51,8 +43,6 @@ Automation Setup
 
 Pre-Automation steps
 ~~~~~~~~~~~~~~~~~~~~
-
-
 
 
 Assumptions
@@ -68,7 +58,7 @@ Common Automation Tasks
 Below is a description for common automation tasks.
 
 Provision New Server
-~~~~~~~~~-----~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 Change Server Role
 ~~~~~~~~~~~~~~~~~~
